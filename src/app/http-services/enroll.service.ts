@@ -23,7 +23,6 @@ export class EnrollService {
 
   /* getEnrollees */
   getEnrollees(){
-    console.log(`${AppConstant.API_BASE_URL.enrollee}${Routes.Enrollment.getEnrollees}`)
     return this.dispacherService.get(`${AppConstant.API_BASE_URL.enrollee}${Routes.Enrollment.getEnrollees}`)
     .pipe(map(data => {
         return data;
@@ -31,13 +30,13 @@ export class EnrollService {
   }
 
     /* Update Enrollee */
-    updateEnrollee(id:string,name:string,status:boolean){
+    updateEnrollee(id:string,name:string,status:boolean, dateOfBirth:string){
       let formatRoute = Routes.Enrollment.updateEnrollee.replace(":id",id)
       return this.dispacherService.put(`${AppConstant.API_BASE_URL.enrollee}${formatRoute}`,
-      {id:id, name:name,active:status})
+      {id:id, name:name,active:status,dateOfBirth:dateOfBirth})
       .pipe(map(data => {
           return data;
-      }), catchError(this.handleError('updateEnrollee',{name,status})));
+      }), catchError(this.handleError('updateEnrollee',{name,status,dateOfBirth})));
     }
 
   /* getEnrollee */

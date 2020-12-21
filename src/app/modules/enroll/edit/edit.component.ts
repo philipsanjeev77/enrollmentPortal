@@ -12,6 +12,7 @@ import { AppConstant } from 'src/app/locales/app-constants';
 export class EditComponent implements OnInit {
   enrollEditFrm: FormGroup;
   id:string;
+  dateOfBirth:string=''
   submitted:boolean;
 
   constructor(private formBuilder:FormBuilder,private route:ActivatedRoute,private router:Router,private enrollService :EnrollService) { 
@@ -43,22 +44,21 @@ export class EditComponent implements OnInit {
   get f(){ return this.enrollEditFrm.controls};
 
   onCancel =()=>{
-
     this.router.navigate(['/dashboard/enroll/list'])
-
   }
 
   getEnrolleeById()
   {
     this.enrollService.getEnrollee(this.id).subscribe((res:any)=>{
   
-      console.log("Response" , res)
+      this.dateOfBirth = res.dateOfBirth
      this.enrollEditFrm.patchValue(res)
   
     },(err:any)=>{
   
     })
   }
+
   onSubmit =() =>{
     this.submitted =true;
     if(this.enrollEditFrm.invalid)
@@ -66,7 +66,7 @@ export class EditComponent implements OnInit {
       return false;
     }
     let activeValue =  (/true/i).test(this.f.active.value) 
-    this.enrollService.updateEnrollee(this.id,this.f.name.value,activeValue).subscribe((res:any)=>{
+    this.enrollService.updateEnrollee(this.id,this.f.name.value,activeValue, this.dateOfBirth).subscribe((res:any)=>{
 
       alert("Enrollee updated successfully")
 

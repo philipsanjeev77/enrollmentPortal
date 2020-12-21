@@ -19,8 +19,6 @@ export class ListComponent implements OnInit {
   getEnrolles()
   {
     this.enrollService.getEnrollees().subscribe((res:any)=>{
-  
-      console.log(res)
       this.enroll = res
   
     },(err:any)=>{
