@@ -1,0 +1,32 @@
+<div class="m-grid m-grid--hor m-grid--root m-page">
+    <div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-2" id="m_login" style="background-image: url(images/bg-3.jpg);">
+        <div class="m-grid__item m-grid__item--fluid	m-login__wrapper">
+            <div class="m-login__container">
+                <div class="m-login__signin">
+                    <div class="m-login__head">
+                        <h3 class="m-login__title m--font-green">
+                            Sign In To Enroll
+                        </h3>
+                    </div>
+                    <form class="m-login__form m-form" [formGroup]="loginForm">
+                        <div class="form-group m-form__group" [ngClass]="{ 'has-danger': (submitted ||!f.email.pristine)  && f.email.errors }">
+                            <input class="form-control m-input" type="text" placeholder="Email" name="email" formControlName="email"  autocomplete="off" maxlength="50">
+                            <div class="form-control-feedback" *ngIf="(submitted ||!f.email.pristine) && f.email.errors"
+                            [innerText]="f.email.errors.required? 'Email is required':'Email format is not valid'"></div>
+                        </div>
+                        <div class="form-group m-form__group" [ngClass]="{ 'has-danger': (submitted ||!f.password.pristine)  && f.password.errors }">
+                            <input class="form-control m-input m-login__form-input--last" type="password" formControlName="password"  placeholder="Password" name="password" maxlength="50">
+                            <div class="form-control-feedback" *ngIf="(submitted ||!f.password.pristine) && f.password.errors"
+                            [innerText]="f.password.errors.required? 'Password is required':''"></div>
+                        </div>
+                        <div class="m-login__form-action">
+                            <button id="m_login_signin_submit" class="btn m-btn--gradient-green m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary" (click)="onSubmit()">
+                                Sign In
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

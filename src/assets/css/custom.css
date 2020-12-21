@@ -1,0 +1,196 @@
+
+img{
+	max-width: 100%;
+}
+.nav-pills.nav-fill-gray .nav-link:not(.active){
+	background-color: #f2f2f2;
+}
+.card-custom{
+	border: none;
+}
+.fs-50{
+	font-size: 50px !important;
+}
+.fs-25{
+	font-size: 25px !important;
+}
+table.nowrap-text thead th{
+	white-space: nowrap;
+}
+table.nowrap-table-all th{
+	white-space: nowrap;
+}
+.dashboard-widget .m-portlet .d-block:hover{text-decoration: none;}
+.dashboard-widget .m-portlet .d-block:hover h3,.dashboard-widget .m-portlet .d-block:hover h4{color: #5867dd !important;}
+
+/*Stepwise Form*/
+/*form styles*/
+#msform {
+	margin: 50px auto;
+	position: relative;
+}
+#msform fieldset {
+	width: 100%;
+}
+	
+	/*stacking fieldsets above each other*/
+	/* position: relative;
+} */
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+	text-align: center;
+}
+#progressbar li {
+	list-style-type: none;
+	color: #3f4047;
+	text-transform: capitalize;
+	font-size: 14px;
+	width: 25%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 25px;
+	line-height: 25px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: #bdb4b4;
+	border-radius: 50%;
+	margin: 0 auto 5px auto;
+	position: relative;
+	z-index: 2;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #ecdede;
+	position: absolute;
+	left: -50%;
+	top: 11px;
+	z-index: 1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: #fff;
+}
+
+.product-cat-bar > li {width: 50% !important;}
+
+.card-gallery > a{
+	height: 160px; 
+	overflow: hidden;
+}
+.card-gallery .card-img-top{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.card-gallery  .card-title a{
+	color: #575962;
+}
+
+.modal-footer.no_border{
+	border-top: none;
+}
+
+/*Pagination*/
+.pagination{border: 1px solid #c6c6c6; display: table; border-radius: 5px; margin:15px; /*float:right; */}
+ul.pagination li{float:left; border-right:1px solid #c6c6c6;}
+ul.pagination li:last-child{border-right:none;}
+ul.pagination li span , ul.pagination li a{padding:0px 15px; line-height:40px; display:block; color:#333;}
+ul.pagination li.active{background:#ececec;}
+
+#addWorkerForm .form-control-feedback{
+    color: #f00;
+}
+#editWorkerForm .form-control-feedback{
+    color: #f00;
+}
+.select-status-custom option{background-color: #fff; color: #575962;}
+
+.select-btn-custom{-webkit-appearance: none; -moz-appearance: none; appearance: none;}
+.select-btn-custom:disabled{opacity: 1;}
+
+#createRewardProductGroupForm .form-control-feedback{
+    color: #f00;
+}
+#editWorkerFormPassword .form-control-feedback{
+    color: #f00;
+}
+
+.loader-custom{position: absolute; width: 100%; left: 0; top: 0; bottom: 0;}
+.loader-white{background-color: rgba(255, 255, 255, 0.75);}
+
+.datepicker-wrapper-modal .datetimepicker{left: 0px !important; top: 45px !important;} 
+
+.modal-backdrop.hidden {
+	display: none;
+}
+
+.img-inline-wrapper .img-item {
+	flex-basis: 15%;
+	max-width: 15%;
+	overflow: hidden;
+	position: relative;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	background-color: #f1f1f1;
+    border: solid 1px #f1f1f1;
+}
+.img-inline-wrapper .img-item:after {
+	content: '';
+	padding-top: 100%;
+	display: block;
+}
+.img-inline-wrapper .img-item img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	transform: translate(-50%,-50%);
+	object-fit: cover;
+}
+.input-file{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	position: absolute;
+}

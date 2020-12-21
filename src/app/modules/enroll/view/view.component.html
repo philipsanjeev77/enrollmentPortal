@@ -1,0 +1,91 @@
+ 
+  <div class="m-content">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12">
+        <div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+          <div class="m-portlet__head">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+              <div class="m-portlet__head-title">
+                <span class="m-portlet__head-icon m--hide">
+                  <i class="la la-gear"></i>
+                </span>
+                <h3 class="m-portlet__head-text">
+                  Enroll Details
+                </h3>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" id="m_user_profile_tab_1">
+              <form class="m-form m-form--fit m-form--label-align-right">
+                <div class="m-portlet__body">
+                  <div class="form-group m-form__group row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <label for="example-text-input" class="col-5 col-form-label">
+                          <strong>Enrollee Id :</strong>
+                        </label>
+                        <div class="col-7">
+                          <label class="col-form-label">{{enroll.id}}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <label for="example-text-input" class="col-5 col-form-label">
+                          <strong>Name :</strong>
+                        </label>
+                        <div class="col-7">
+                          <label class="col-form-label">{{enroll.name}}</label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="form-group m-form__group row">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <label for="example-text-input" class="col-5 col-form-label">
+                          <strong>Dob :</strong>
+                        </label>
+                        <div class="col-7">
+                          <label class="col-form-label">{{enroll.dateOfBirth}}</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <label for="example-text-input" class="col-5 col-form-label">
+                          <strong>Status :</strong>
+                        </label>
+                        <div class="col-7">
+                          <label class="col-form-label">{{enroll.active ? 'Yes' : 'No' }}</label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="m-form__seperator m-form__seperator--dashed m-form__seperator--space-2x"></div>
+                </div>
+              </form>
+              <div class="col-sm-8 offset-sm-3 px-0 pt-8">
+                <div class="row">
+                  <div class="col-md-10 ml-sm-auto text-right btn-gap">
+                    <button type="button" class="btn  m-btn--gradient-green btn-deal-toggle" (click)="onCancel()" >
+                      Back
+                    </button>
+                  
+                  </div>
+                  
+                </div>
+              </div> 
+            </div>
+            <div class="tab-pane " id="m_user_profile_tab_2"></div>
+            <div class="tab-pane " id="m_user_profile_tab_3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,68 @@
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title ">
+                    Add/Edit Enrollee
+                </h3>
+            </div>
+        </div>
+    </div>
+  <div class="m-content">
+    <!--Begin::Section-->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="m-portlet">
+          <div class="m-portlet__body">
+            <form class="m-form m-form--label-align-right col-sm-6 offset-sm-3 px-0" [formGroup]="enrollEditFrm">
+              <div class="form-group m-form__group row" [ngClass]="{ 'has-danger': (submitted ||!f.name.pristine)  && f.name.errors }">
+                <label class="col-2 col-form-label">
+                  Name
+                </label>
+                <div class="col-10">
+                  <input autocomplete="off" class="form-control m-input" type="text"  formControlName="name"  name="name">
+                  <div class="form-control-feedback" *ngIf="(submitted || !f.name?.pristine) && f.name?.errors?.required">Name is required.</div>
+                </div>
+              </div>
+              <div class="form-group m-form__group row" [ngClass]="{ 'has-danger': (submitted ||!f.active.pristine)  && f.active.errors }">
+                <label class="col-2 col-form-label">
+                  Status
+                </label>
+                <div class="col-10">
+                    <select class="form-control m-input" id="exampleSelect1" formControlName="active">
+                        <option value="">
+                          Select Status
+                        </option>
+                        <option value="true">
+                          Active
+                        </option>
+                        <option value="false">
+                          Deactive
+                        </option>
+      
+                      </select>
+                      <div class="form-control-feedback" *ngIf="(submitted ||!f.active.pristine) && f.active.errors"
+                      [innerText]="f.active.errors.required? 'Status is required':''"></div>
+                </div>
+              </div>
+            </form>
+            <div class="col-sm-6 offset-sm-3 px-0 pt-4">
+              <div class="row">
+                <div class="col-md-10 ml-sm-auto text-right btn-gap">
+                  <button type="button" class="btn  m-btn--gradient-green btn-deal-toggle" (click)="onCancel()">
+                    Cancel
+                  </button>
+                  <button type="button" class="btn  m-btn--gradient-green btn-deal-toggle" (click)="onSubmit()">
+                    Save
+                  </button>
+                </div>
+                
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End::Section-->
+  </div> 
+  </div> 

@@ -1,0 +1,70 @@
+
+  <div class="m-portlet__foot m-portlet__foot--fit m-portlet__no-border">
+    <div class="m-form__actions text-left">
+      <div class="row">
+        <div class="m-portlet__head" style = "margin-left: 2rem;">
+          <div class="m-portlet__head">
+            <div class="m-portlet__head-caption">
+            <div class="m-portlet__head-title">
+              <span class="m-portlet__head-icon m--hide">
+                <i class="la la-gear"></i>
+              </span>
+              <h3 class="m-portlet__head-text">
+                Enrollees 
+              </h3>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered m-table m-table--border-brand m-table--head-bg-brand nowrap-text">
+      <thead>
+        <tr>
+          <th>
+            Enroll Id
+          </th> 
+          <th>
+            Name
+          </th>
+          <th>
+            Dob
+          </th>
+          <th>
+           Status
+          </th>													
+          <th width="90">
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of enroll ">
+          <td>
+            {{e.id}}
+          </td> 
+          <td>
+            {{e.name}}
+          </td>
+          <td>
+            {{e.dateOfBirth}}
+          </td>
+          <td>
+            <div [ngStyle]="{color:e.active?'green':'red'}" [innerHTML]="setStatus(e.active)"></div>
+         
+          </td>
+          <td class="align-middle">
+            <a href="javascript:void(0);" class="m-link m-link--state m-link--info m-1 align-middle" [routerLink]="['/dashboard/enroll/view',e.id]">
+              <i class="fa fa-eye"></i>
+          </a>
+          <a href="javascript:void(0);" class="m-link m-link--state m-link--info m-1 align-middle" [routerLink]="['/dashboard/enroll/edit',e.id]">
+            <i class="fa fa-edit"></i>
+        </a>
+          </td>
+        </tr> 
+      </tbody>
+    </table>
+  </div>  
